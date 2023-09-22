@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react'
+import { Auth, Hub, API } from 'aws-amplify'
+import AppRoutes from './routes/AppRoutes'
+
+
+const initialState = { handle: '', email: '', avatar: ''}
 
 function App() {
+  const [uiState, setUiState] = useState(null)
+  const [user, setUser] = useState(null)
+  
+  useEffect(()=> {
+    checkUser()
+    // setAuthListener()
+    setUiState('homeIn')
+  }, [])
+
+  async function checkUser(){
+    try {
+      const user = await Auth.currentAuthenticatedUser()
+      console.log('user from app:', user)
+      console.log('username from app:', user.username)
+      const { email, nickname} = user.attributes
+      setUser(()=> nickname ? nickname : email)
+      setUiState('signedIn')
+      } catch (error) {
+        setUser(null)
+      //setUiState('signIn')
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AppRoutes
+      user={user}
+      setUser={setUser}
+      checkUser={checkUser}
+      uiState={uiState}
+      setUiState={setUiState}
+    />
+  )
 }
 
-export default App;
+export default App

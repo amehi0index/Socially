@@ -1,0 +1,16 @@
+{
+  "resourceName": "sociallyImages",
+  "policyUUID": "74b5883b",
+  "bucketName": "sociallyaec04659306c41c78d18becd1508e35b",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

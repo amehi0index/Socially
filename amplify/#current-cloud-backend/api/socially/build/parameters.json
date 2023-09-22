@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "socially",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authsocially3fe368ff",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-socially-dev-123626-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/cf117935f39e8fd508f7811295fbea8b0f4ec61f"
+}

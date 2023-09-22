@@ -1,0 +1,464 @@
+type Post @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  title: String!
+  content: String!
+  coverImage: String
+  likes(filter: ModelPostLikeFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelPostLikeConnection
+  userID: ID!
+  user: User
+  comments(content: ModelStringKeyConditionInput, filter: ModelCommentFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelCommentConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type Subscription {
+  onCreateByPostId(postId: String!): Post @aws_subscribe(mutations: ["createPost"])
+  onCreatePost(filter: ModelSubscriptionPostFilterInput, owner: String): Post @aws_subscribe(mutations: ["createPost"]) @aws_api_key @aws_cognito_user_pools
+  onUpdatePost(filter: ModelSubscriptionPostFilterInput, owner: String): Post @aws_subscribe(mutations: ["updatePost"]) @aws_api_key @aws_cognito_user_pools
+  onDeletePost(filter: ModelSubscriptionPostFilterInput, owner: String): Post @aws_subscribe(mutations: ["deletePost"]) @aws_api_key @aws_cognito_user_pools
+  onCreateComment(filter: ModelSubscriptionCommentFilterInput, owner: String): Comment @aws_subscribe(mutations: ["createComment"]) @aws_api_key @aws_cognito_user_pools
+  onUpdateComment(filter: ModelSubscriptionCommentFilterInput, owner: String): Comment @aws_subscribe(mutations: ["updateComment"]) @aws_api_key @aws_cognito_user_pools
+  onDeleteComment(filter: ModelSubscriptionCommentFilterInput, owner: String): Comment @aws_subscribe(mutations: ["deleteComment"]) @aws_api_key @aws_cognito_user_pools
+  onCreatePostLike(filter: ModelSubscriptionPostLikeFilterInput, owner: String): PostLike @aws_subscribe(mutations: ["createPostLike"]) @aws_api_key @aws_cognito_user_pools
+  onUpdatePostLike(filter: ModelSubscriptionPostLikeFilterInput, owner: String): PostLike @aws_subscribe(mutations: ["updatePostLike"]) @aws_api_key @aws_cognito_user_pools
+  onDeletePostLike(filter: ModelSubscriptionPostLikeFilterInput, owner: String): PostLike @aws_subscribe(mutations: ["deletePostLike"]) @aws_api_key @aws_cognito_user_pools
+  onCreateUser(filter: ModelSubscriptionUserFilterInput, owner: String): User @aws_subscribe(mutations: ["createUser"]) @aws_api_key @aws_cognito_user_pools
+  onUpdateUser(filter: ModelSubscriptionUserFilterInput, owner: String): User @aws_subscribe(mutations: ["updateUser"]) @aws_api_key @aws_cognito_user_pools
+  onDeleteUser(filter: ModelSubscriptionUserFilterInput, owner: String): User @aws_subscribe(mutations: ["deleteUser"]) @aws_api_key @aws_cognito_user_pools
+}
+
+type Comment @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  postID: ID!
+  content: String
+  userID: ID!
+  user: User
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type PostLike @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  postID: ID!
+  userID: ID!
+  user: User
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type User @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  handle: String
+  email: String!
+  avatar: String
+  pronouns: String
+  posts(filter: ModelPostFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelPostConnection
+  comments(filter: ModelCommentFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelCommentConnection
+  likes(filter: ModelPostLikeFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelPostLikeConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelPostConnection @aws_api_key @aws_cognito_user_pools {
+  items: [Post]!
+  nextToken: String
+}
+
+input ModelPostFilterInput {
+  id: ModelIDInput
+  title: ModelStringInput
+  content: ModelStringInput
+  coverImage: ModelStringInput
+  userID: ModelIDInput
+  and: [ModelPostFilterInput]
+  or: [ModelPostFilterInput]
+  not: ModelPostFilterInput
+}
+
+type Query {
+  getPost(id: ID!): Post @aws_api_key @aws_cognito_user_pools
+  listPosts(filter: ModelPostFilterInput, limit: Int, nextToken: String): ModelPostConnection @aws_api_key @aws_cognito_user_pools
+  postsByUserID(userID: ID!, sortDirection: ModelSortDirection, filter: ModelPostFilterInput, limit: Int, nextToken: String): ModelPostConnection @aws_api_key @aws_cognito_user_pools
+  getComment(id: ID!): Comment @aws_api_key @aws_cognito_user_pools
+  listComments(filter: ModelCommentFilterInput, limit: Int, nextToken: String): ModelCommentConnection @aws_api_key @aws_cognito_user_pools
+  commentsByPostIDAndContent(postID: ID!, content: ModelStringKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelCommentFilterInput, limit: Int, nextToken: String): ModelCommentConnection @aws_api_key @aws_cognito_user_pools
+  commentsByUserID(userID: ID!, sortDirection: ModelSortDirection, filter: ModelCommentFilterInput, limit: Int, nextToken: String): ModelCommentConnection @aws_api_key @aws_cognito_user_pools
+  getPostLike(id: ID!): PostLike @aws_api_key @aws_cognito_user_pools
+  listPostLikes(filter: ModelPostLikeFilterInput, limit: Int, nextToken: String): ModelPostLikeConnection @aws_api_key @aws_cognito_user_pools
+  postLikesByPostID(postID: ID!, sortDirection: ModelSortDirection, filter: ModelPostLikeFilterInput, limit: Int, nextToken: String): ModelPostLikeConnection @aws_api_key @aws_cognito_user_pools
+  postLikesByUserID(userID: ID!, sortDirection: ModelSortDirection, filter: ModelPostLikeFilterInput, limit: Int, nextToken: String): ModelPostLikeConnection @aws_api_key @aws_cognito_user_pools
+  getUser(id: ID!): User @aws_api_key @aws_cognito_user_pools
+  listUsers(filter: ModelUserFilterInput, limit: Int, nextToken: String): ModelUserConnection @aws_api_key @aws_cognito_user_pools
+}
+
+input ModelPostConditionInput {
+  title: ModelStringInput
+  content: ModelStringInput
+  coverImage: ModelStringInput
+  userID: ModelIDInput
+  and: [ModelPostConditionInput]
+  or: [ModelPostConditionInput]
+  not: ModelPostConditionInput
+}
+
+input CreatePostInput {
+  id: ID
+  title: String!
+  content: String!
+  coverImage: String
+  userID: ID!
+}
+
+input UpdatePostInput {
+  id: ID!
+  title: String
+  content: String
+  coverImage: String
+  userID: ID
+}
+
+input DeletePostInput {
+  id: ID!
+}
+
+type Mutation {
+  createPost(input: CreatePostInput!, condition: ModelPostConditionInput): Post @aws_cognito_user_pools
+  updatePost(input: UpdatePostInput!, condition: ModelPostConditionInput): Post @aws_cognito_user_pools
+  deletePost(input: DeletePostInput!, condition: ModelPostConditionInput): Post @aws_cognito_user_pools
+  createComment(input: CreateCommentInput!, condition: ModelCommentConditionInput): Comment @aws_cognito_user_pools
+  updateComment(input: UpdateCommentInput!, condition: ModelCommentConditionInput): Comment @aws_cognito_user_pools
+  deleteComment(input: DeleteCommentInput!, condition: ModelCommentConditionInput): Comment @aws_cognito_user_pools
+  createPostLike(input: CreatePostLikeInput!, condition: ModelPostLikeConditionInput): PostLike @aws_cognito_user_pools
+  updatePostLike(input: UpdatePostLikeInput!, condition: ModelPostLikeConditionInput): PostLike @aws_cognito_user_pools
+  deletePostLike(input: DeletePostLikeInput!, condition: ModelPostLikeConditionInput): PostLike @aws_cognito_user_pools
+  createUser(input: CreateUserInput!, condition: ModelUserConditionInput): User @aws_cognito_user_pools
+  updateUser(input: UpdateUserInput!, condition: ModelUserConditionInput): User @aws_cognito_user_pools
+  deleteUser(input: DeleteUserInput!, condition: ModelUserConditionInput): User @aws_cognito_user_pools
+}
+
+input ModelSubscriptionPostFilterInput {
+  id: ModelSubscriptionIDInput
+  title: ModelSubscriptionStringInput
+  content: ModelSubscriptionStringInput
+  coverImage: ModelSubscriptionStringInput
+  userID: ModelSubscriptionIDInput
+  and: [ModelSubscriptionPostFilterInput]
+  or: [ModelSubscriptionPostFilterInput]
+}
+
+type ModelCommentConnection @aws_cognito_user_pools @aws_api_key {
+  items: [Comment]!
+  nextToken: String
+}
+
+input ModelCommentFilterInput {
+  id: ModelIDInput
+  postID: ModelIDInput
+  content: ModelStringInput
+  userID: ModelIDInput
+  and: [ModelCommentFilterInput]
+  or: [ModelCommentFilterInput]
+  not: ModelCommentFilterInput
+}
+
+input ModelCommentConditionInput {
+  postID: ModelIDInput
+  content: ModelStringInput
+  userID: ModelIDInput
+  and: [ModelCommentConditionInput]
+  or: [ModelCommentConditionInput]
+  not: ModelCommentConditionInput
+}
+
+input CreateCommentInput {
+  id: ID
+  postID: ID!
+  content: String
+  userID: ID!
+}
+
+input UpdateCommentInput {
+  id: ID!
+  postID: ID
+  content: String
+  userID: ID
+}
+
+input DeleteCommentInput {
+  id: ID!
+}
+
+input ModelSubscriptionCommentFilterInput {
+  id: ModelSubscriptionIDInput
+  postID: ModelSubscriptionIDInput
+  content: ModelSubscriptionStringInput
+  userID: ModelSubscriptionIDInput
+  and: [ModelSubscriptionCommentFilterInput]
+  or: [ModelSubscriptionCommentFilterInput]
+}
+
+type ModelPostLikeConnection @aws_cognito_user_pools @aws_api_key {
+  items: [PostLike]!
+  nextToken: String
+}
+
+input ModelPostLikeFilterInput {
+  id: ModelIDInput
+  postID: ModelIDInput
+  userID: ModelIDInput
+  and: [ModelPostLikeFilterInput]
+  or: [ModelPostLikeFilterInput]
+  not: ModelPostLikeFilterInput
+}
+
+input ModelPostLikeConditionInput {
+  postID: ModelIDInput
+  userID: ModelIDInput
+  and: [ModelPostLikeConditionInput]
+  or: [ModelPostLikeConditionInput]
+  not: ModelPostLikeConditionInput
+}
+
+input CreatePostLikeInput {
+  id: ID
+  postID: ID!
+  userID: ID!
+}
+
+input UpdatePostLikeInput {
+  id: ID!
+  postID: ID
+  userID: ID
+}
+
+input DeletePostLikeInput {
+  id: ID!
+}
+
+input ModelSubscriptionPostLikeFilterInput {
+  id: ModelSubscriptionIDInput
+  postID: ModelSubscriptionIDInput
+  userID: ModelSubscriptionIDInput
+  and: [ModelSubscriptionPostLikeFilterInput]
+  or: [ModelSubscriptionPostLikeFilterInput]
+}
+
+type ModelUserConnection @aws_api_key @aws_cognito_user_pools {
+  items: [User]!
+  nextToken: String
+}
+
+input ModelUserFilterInput {
+  id: ModelIDInput
+  handle: ModelStringInput
+  email: ModelStringInput
+  avatar: ModelStringInput
+  pronouns: ModelStringInput
+  and: [ModelUserFilterInput]
+  or: [ModelUserFilterInput]
+  not: ModelUserFilterInput
+}
+
+input ModelUserConditionInput {
+  handle: ModelStringInput
+  email: ModelStringInput
+  avatar: ModelStringInput
+  pronouns: ModelStringInput
+  and: [ModelUserConditionInput]
+  or: [ModelUserConditionInput]
+  not: ModelUserConditionInput
+}
+
+input CreateUserInput {
+  id: ID
+  handle: String
+  email: String!
+  avatar: String
+  pronouns: String
+}
+
+input UpdateUserInput {
+  id: ID!
+  handle: String
+  email: String
+  avatar: String
+  pronouns: String
+}
+
+input DeleteUserInput {
+  id: ID!
+}
+
+input ModelSubscriptionUserFilterInput {
+  id: ModelSubscriptionIDInput
+  handle: ModelSubscriptionStringInput
+  email: ModelSubscriptionStringInput
+  avatar: ModelSubscriptionStringInput
+  pronouns: ModelSubscriptionStringInput
+  and: [ModelSubscriptionUserFilterInput]
+  or: [ModelSubscriptionUserFilterInput]
+}
+
+input ModelStringKeyConditionInput {
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  between: [String]
+  beginsWith: String
+}
