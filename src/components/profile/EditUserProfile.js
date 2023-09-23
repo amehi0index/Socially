@@ -4,7 +4,7 @@ import { API, Auth, Storage } from 'aws-amplify'
 import { updateUser, deleteUser, createUser } from '../../graphql/mutations'
 import { getUser } from '../../graphql/queries'
 import { v4 as uuid } from 'uuid'
-import { FaUser } from 'react-icons/fa'
+import { FaUser, FaUserPlus } from 'react-icons/fa'
 
 function EditUserProfile() {
   const [profile, setProfile] = useState(null)
@@ -135,19 +135,13 @@ function EditUserProfile() {
   // }
 
   async function uploadImage() {
-  
     hiddenFileInput.current.click()
     setIsSwitch(true)
   }
 
   function handleChange(e) {
     const fileUploaded = e.target.files[0]
-   
     if (!fileUploaded) return
-    //{
-    //   setImage(avatarImage)
-    //   return
-    // } 
     setImage(fileUploaded)
     setIsSwitch(true) 
   }
@@ -172,7 +166,7 @@ function EditUserProfile() {
                   readOnly
                   placeholder={profile.pronouns !== "" ? `${profile.handle} (${profile.pronouns})` : `${profile.handle}`}
                   // placeholder={`${profile.handle} (${profile.pronouns})` ?? `${profile.handle}`}
-                  className="border-b text-gray-900 text-sm mt-4 p-2 focus:outline-none w-full text-gray-500 rounded"
+                  className="border-b text-sm mt-4 p-2 focus:outline-none w-full text-gray-500 rounded"
                 /> 
                           
                 <input
@@ -196,13 +190,13 @@ function EditUserProfile() {
                     <option value="He/They">He/They</option>
                 </select>
 
-            {/* <div className="h-40 w-40 bg-purple-500 opacity-60 my-4 p-4 rounded flex self-center items-center justify-center">   */}
-            <div className="h-40 w-40 bg-gradient-to-r from-purple-600 to-purple-400 opacity-60 my-4 p-4 rounded flex self-center items-center justify-center">  
+            <div className="h-40 w-40 bg-gradient-to-r from-purple-600 to-purple-400 opacity-60 my-4 p-4 rounded flex self-center items-center justify-center relative">  
               <img src={image ? URL.createObjectURL(image) : avatarImage} className="my-4 h-24 w-24" />
-              {/* {isSwitch
-                ?  (image && <img src={URL.createObjectURL(image)} className="my-4 h-40 w-40" />)
-                :  (avatarImage  && <img src={avatarImage} alt="" />)
-              }      */}
+               
+              <button className="absolute top-2 right-2 p-2 rounded-full bg-gray-600 hover:bg-gray-500 ease-in-out duration-300" onClick={uploadImage}>
+                <FaUserPlus />
+              </button>
+
             </div> 
            
                 <input
@@ -213,12 +207,12 @@ function EditUserProfile() {
                 />
 
                 <div className="flex justify-between pb-3 mt-4">
-                {/* <div className="flex space-x-2 pb-3 mt-4"> */}
-                  <button
+                  {/* <button
                     className="bg-slate-800 text-white font-semibold px-4 py-2 rounded-sm hover:bg-slate-700 transition ease-in-out"
                     onClick={uploadImage}
                   >Upload Image
-                  </button>
+                  </button> */}
+
                   <button
                     type="button"
                     className="bg-slate-800 text-white font-semibold px-4 py-2 rounded-sm hover:bg-slate-700 transition ease-in-out"
