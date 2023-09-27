@@ -14,9 +14,10 @@ function Navbar({ uiState, setUiState, user, setUser }) {
       <div className="container-fluid w-full flex  items-center justify-between">
         <div className="container-fluid w-full flex justify-between">
           <div class="flex items-center flex-shrink-0 text-white mr-6">
-            <Link to="/">
+          <span class="font-semibold text-xl">NotReddit</span>
+            {/* <Link to="/"> 
               <span class="font-semibold text-xl">NotReddit</span>
-            </Link>
+            </Link> */}
           </div> 
             {
               uiState !== ('signedIn') && (

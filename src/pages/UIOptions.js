@@ -7,10 +7,14 @@ import ConfirmSignUp from '../components/auth/signup/ConfirmSignUp'
 import ForgotPassword from '../components/auth/signin/ForgotPassword'
 import ForgotPasswordSubmit from '../components/auth/signin/ForgotPasswordSubmit'
 import { createUser } from '../graphql/mutations'
+import AllPosts from '../components/posts/AllPosts'
+
+import { useNavigate, Link } from 'react-router-dom'
 
 const initialState = { handle: '', email: '', avatar: ''}
 
 const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
+    let navigate = useNavigate()
     const [formState, setFormState] = useState({
     email: '', nickname: '', password: '', authCode: ''
     })
@@ -27,6 +31,7 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
             await Auth.signIn(email, password) 
             checkUser()
             setUiState('signedIn')
+            // navigate('/allposts')
         } catch (error) {
             console.log('error signing in', error);
         }
@@ -106,40 +111,42 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
       })
   }
     return (
-        <>
-            {   uiState !== 'signedIn' &&
-                (
-                    <>
-                        {
-                            uiState === 'signUp' && (
-                                <SignUp onChange={onChange} setUiState={setUiState} signUp={signUp} />
-                            )
-                        }
-                        
-                        {
-                            uiState === 'confirmSignUp' && (
-                                <ConfirmSignUp onChange={onChange} setUiState={setUiState} confirmSignUp={confirmSignUp} />
-                            )
-                        }
-                        {
-                            uiState === 'signIn' && (
-                                <SignIn onChange={onChange} setUiState={setUiState} signIn={signIn} />
-                            )
-                        }
-                        {
-                            uiState === 'forgotPassword' && (
-                                <ForgotPassword onChange={onChange} setUiState={setUiState} forgotPassword={forgotPassword} />
-                            )
-                        }
-                        {
-                            uiState === 'forgotPasswordSubmit' && (
-                                <ForgotPasswordSubmit onChange={onChange} forgotPasswordSubmit={forgotPasswordSubmit} />
-                            )
-                        } 
-                    </>
-                )
-            }
-        </>
+        <div className="relative w-full flex">
+            <div className="container-fluid w-full flex space-x-4 p-6" >
+                {   uiState !== 'signedIn' &&
+                    (
+                        <>
+                            {
+                                uiState === 'signUp' && (
+                                    <SignUp onChange={onChange} setUiState={setUiState} signUp={signUp} />
+                                )
+                            }
+                            
+                            {
+                                uiState === 'confirmSignUp' && (
+                                    <ConfirmSignUp onChange={onChange} setUiState={setUiState} confirmSignUp={confirmSignUp} />
+                                )
+                            }
+                            {
+                                uiState === 'signIn' && (
+                                    <SignIn onChange={onChange} setUiState={setUiState} signIn={signIn} />
+                                )
+                            }
+                            {
+                                uiState === 'forgotPassword' && (
+                                    <ForgotPassword onChange={onChange} setUiState={setUiState} forgotPassword={forgotPassword} />
+                                )
+                            }
+                            {
+                                uiState === 'forgotPasswordSubmit' && (
+                                    <ForgotPasswordSubmit onChange={onChange} forgotPasswordSubmit={forgotPasswordSubmit} />
+                                )
+                            } 
+                        </>
+                    )
+                }
+            </div>
+        </div>
     )
 }
 

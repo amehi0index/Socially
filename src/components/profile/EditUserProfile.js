@@ -173,7 +173,7 @@ function EditUserProfile() {
                   name="email"
                   readOnly
                   placeholder={profile.email}
-                  className="border-b text-gray-900 text-sm my-4 p-2 focus:outline-none w-full text-gray-500 rounded"
+                  className="border-b  text-sm my-4 p-2 focus:outline-none w-full text-gray-500 rounded"
                 /> 
                           
                 <select

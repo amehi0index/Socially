@@ -12,7 +12,7 @@ function App() {
   useEffect(()=> {
     checkUser()
     // setAuthListener()
-    setUiState('homeIn')
+    setUiState('signIn')
   }, [])
 
   async function checkUser(){

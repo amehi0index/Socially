@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from '../pages/Home'
 import Navbar from '../pages/Navbar'
@@ -12,44 +11,43 @@ import EditComment from '../components/comments/EditComment'
 import UIOptions from '../pages/UIOptions'
 import CreateComment from '../components/comments/CreateComment'
 import EditUserProfile from '../components/profile/EditUserProfile'
+import AllPosts from '../components/posts/AllPosts'
+
 
 const AppRoutes = ({ user, setUser, checkUser, uiState, setUiState }) => {
 
   return (
-   <Router>
+    <Router>
       <Navbar
         uiState={uiState}
         setUiState={setUiState}
         user={user} setUser={setUser}
         checkUser={checkUser}
       />
-        <div className="relative w-full flex">
-          <div className="container-fluid w-full flex space-x-4 p-6" >
 
-          <UIOptions
-            uiState={uiState}
-            setUiState={setUiState}
-            checkUser={checkUser}
-            user={user}
-          />
-          
-          <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='signin' element={<SignIn/>}/>
-            <Route path= 'signup' element={<SignUp/>}/>
-            <Route path= 'edituserprofile' element={<EditUserProfile />}/>
-            <Route path='createpost' element={<CreatePost />} />
-            <Route path='userposts' element={<UserPosts />} />
-            <Route path='userpostitem/:id' element={<UserPostItem />} />
-            <Route path='editpost/:id' element={<EditPost />} />
-            <Route path='editpost' element={<EditPost />} />
-            <Route path='editcomment/:id' element={<EditComment />} />
-            <Route path='editcomment' element={<EditComment />} /> 
-            <Route path='createcomment/:id' element={<CreateComment />} /> 
-          </Routes>    
-          </div>
-        </div>
-      </Router>
+      <UIOptions
+        uiState={uiState}
+        setUiState={setUiState}
+        checkUser={checkUser}
+        user={user}
+      />
+            
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='signin' element={<SignIn/>}/>
+        <Route path= 'signup' element={<SignUp/>}/>
+        <Route path= 'edituserprofile' element={<EditUserProfile />}/>
+        <Route path='createpost' element={<CreatePost />} />
+        <Route path='userposts' element={<UserPosts />} />
+        <Route path='userpostitem/:id' element={<UserPostItem />} />
+        <Route path='editpost/:id' element={<EditPost />} />
+        <Route path='editpost' element={<EditPost />} />
+        <Route path='editcomment/:id' element={<EditComment />} />
+        <Route path='editcomment' element={<EditComment />} /> 
+        <Route path='createcomment/:id' element={<CreateComment />} /> 
+        <Route path='allposts' element={<AllPosts />} /> 
+      </Routes>    
+    </Router>
   )
 }
 
