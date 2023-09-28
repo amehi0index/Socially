@@ -14,7 +14,7 @@ const Signin = ({ onChange, setUiState, signIn }) => {
         <Input type="password" name="password" onChange={onChange} placeholder="Password" />
         <span
             onClick={() => setUiState('forgotPassword')}
-            className="ml-8 sm:ml-48 text-teal-500 cursor-pointer"
+            className="self-end text-teal-600 cursor-pointer"
           >Forgot your password?</span>
       </div>
 

@@ -118,7 +118,7 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
             {   uiState !== 'signedIn' && 
                 (
                     <div className="container w-3/4 flex items-center justify-center rounded-md mt-6 shadow-lg" >
-                        <div className="w-1/2 h-full flex items-center justify-center border-r-2 border-slate-200">
+                        <div className="w-1/2 h-full flex items-center justify-center border-r-2 border-slate-100">
                             {
                                 uiState === 'signUp' && (
                                     <SignUp onChange={onChange} setUiState={setUiState} signUp={signUp} />

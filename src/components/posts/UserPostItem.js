@@ -49,7 +49,7 @@ export default function Post() {
     async function getCoverImage() {
         if (post && post.coverImage) {
             const imageKey = await Storage.get(post.coverImage)
-            console.log(imageKey)
+            console.log('image from user post', imageKey)
             setCoverImage(imageKey)
         } else {
             console.log('no key')
@@ -105,7 +105,7 @@ export default function Post() {
                     {/* <div class="bg-slate-700 opacity-90 flex flex-col mx-6 mt-8 py-4 px-8 rounded"> */}
                     <div className="flex flex-col mx-6 mt-8 py-4 px-8 rounded">
                         <h1 className="text-xl mt-4 text-white font-semibold tracking-wide">{post.title}</h1>
-                        <div className="w-full h-72 bg-slate-800 my-3">
+                        <div className="w-full h-72 my-3">
                             {
                             coverImage && <img src={coverImage} className="p-1 w-full h-full object-cover" alt="Post Image" />
                             }

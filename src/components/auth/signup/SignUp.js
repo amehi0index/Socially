@@ -4,7 +4,7 @@ import SocialSignIn from '../signin/SocialSignin'
 
 const SignUp = ({ onChange, setUiState, signUp }) => {
   return (
-    <div className="sm:w-540 mt-12 bg-white py-9 px-12 rounded shadow-lg flex flex-col">
+    <div className="sm:w-540 mt-12 bg-white py-9 px-12 rounded flex flex-col">
     <p className="text-3xl font-black">Join Now!</p>
 
       <div className="mt-4">
@@ -18,7 +18,7 @@ const SignUp = ({ onChange, setUiState, signUp }) => {
       <div className="mt-4 flex flex-col">
         <Input type="password" name="password" onChange={onChange} placeholder="Password"/>
         <span
-            className="ml-8 sm:ml-48 text-teal-500 cursor-pointer"
+            className="self-end text-teal-600 cursor-pointer"
           >(Minimum 8 Characters)</span>
       </div>
 
