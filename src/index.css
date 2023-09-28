@@ -10,10 +10,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./img/subtle-prism.svg');
+  /* background-image: url('./img/subtle-prism.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:cover; */
+  /* background-color: rgb(243, 245, 245); */
+}
+
+/* .sign-img{
+  background-image: url('./img/peopletalking-transformed.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size:cover;
+} */
+
+.talkers{
+  height: 600px;
+  width: auto;
 }
 
 code {

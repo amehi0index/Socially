@@ -6,7 +6,7 @@ import { getUser } from '../../graphql/queries'
 import { listComments, listPostLikes } from '../../graphql/queries'
 import * as subscriptions from '../../graphql/subscriptions';
 import { FaComment, FaHeart } from 'react-icons/fa'
-import defaultAvatar from '../../img/user.png'
+import defaultAvatar from '../../img/profile-user.png'
 
 const AllPosts = () => {
   const [posts, setPosts] = useState([])
@@ -52,16 +52,17 @@ const AllPosts = () => {
           variables: {id}
         })
 
+        console.log('profileData', profileData)
+
         if (profileData.data.getUser) {
           //   const { avatar, handle } = profileData.data.getUser
           let avatar = profileData.data.getUser.avatar
           let handle = profileData.data.getUser.handle
-      
-          //Get user avatar from s3/storage
-          if (avatar !== null) {
-            const imageKey = await Storage.get(avatar)
-            post.userAvatar = imageKey
-            post.userHandle = handle
+          post.userHandle = handle
+
+          //Get user avatars from s3/storage
+          if (avatar) {
+            post.userAvatar = await Storage.get(avatar)
           }else {
             console.log('no key')
             post.userAvatar = defaultImage
@@ -92,6 +93,7 @@ const AllPosts = () => {
     }
     // setPosts(postData.data.listPosts.items)
     setPosts( postsWithImages)
+    console.log('posts', posts)
   }
 
   function getDate(isoStr) {
@@ -130,7 +132,7 @@ const AllPosts = () => {
                           <p>{ getDate(post.createdAt) }</p>
                         </div>
                         <h2 className="text:xs md:text-lg leading-tight md:leading-normal font-semibold mt-1 mb-2">{post.title}</h2> 
-                        <div className="mt-auto flex w-1/2 flex space-x-5 text-xs md:text-sm">
+                        <div className="mt-auto  w-1/2 flex space-x-5 text-xs md:text-sm">
                           <span className="flex items-center space-x-1  text-purple-300 bg-slate-800 px-2 py-1 rounded">
                             <FaComment />
                             <p className="px-1">{post.postComments}</p>

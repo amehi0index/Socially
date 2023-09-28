@@ -31,22 +31,26 @@ const AppRoutes = ({ user, setUser, checkUser, uiState, setUiState }) => {
         checkUser={checkUser}
         user={user}
       />
-            
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='signin' element={<SignIn/>}/>
-        <Route path= 'signup' element={<SignUp/>}/>
-        <Route path= 'edituserprofile' element={<EditUserProfile />}/>
-        <Route path='createpost' element={<CreatePost />} />
-        <Route path='userposts' element={<UserPosts />} />
-        <Route path='userpostitem/:id' element={<UserPostItem />} />
-        <Route path='editpost/:id' element={<EditPost />} />
-        <Route path='editpost' element={<EditPost />} />
-        <Route path='editcomment/:id' element={<EditComment />} />
-        <Route path='editcomment' element={<EditComment />} /> 
-        <Route path='createcomment/:id' element={<CreateComment />} /> 
-        <Route path='allposts' element={<AllPosts />} /> 
-      </Routes>    
+
+      <div className="container-fluid w-full flex p-7">      
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='signin' element={<SignIn/>}/>
+          <Route path= 'signup' element={<SignUp/>}/>
+          <Route path= 'edituserprofile' element={<EditUserProfile />}/>
+          <Route path='createpost' element={<CreatePost />} />
+          <Route path='userposts' element={<UserPosts />} />
+          <Route path='userpostitem/:id' element={<UserPostItem />} />
+          <Route path='editpost/:id' element={<EditPost />} />
+          <Route path='editpost' element={<EditPost />} />
+          <Route path='editcomment/:id' element={<EditComment />} />
+          <Route path='editcomment' element={<EditComment />} /> 
+          <Route path='createcomment/:id' element={<CreateComment />} /> 
+          <Route path='allposts' element={<AllPosts />} /> 
+        </Routes> 
+      </div> 
+   
+
     </Router>
   )
 }

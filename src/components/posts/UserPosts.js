@@ -42,6 +42,7 @@ const UserPosts = ({ user }) => {
   }
 
   async function deletePost(id) {
+    console.log('postId', id)
     await API.graphql({
       query: deletePostMutation,
       variables: { input: { id } },

@@ -10,6 +10,8 @@ import { createUser } from '../graphql/mutations'
 import AllPosts from '../components/posts/AllPosts'
 
 import { useNavigate, Link } from 'react-router-dom'
+import Talkers from "../img/peopletalking.png";
+ import '../index.css'
 
 const initialState = { handle: '', email: '', avatar: ''}
 
@@ -31,7 +33,7 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
             await Auth.signIn(email, password) 
             checkUser()
             setUiState('signedIn')
-            // navigate('/allposts')
+            navigate('/allposts')
         } catch (error) {
             console.log('error signing in', error);
         }
@@ -111,11 +113,12 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
       })
   }
     return (
-        <div className="relative w-full flex">
-            <div className="container-fluid w-full flex space-x-4 p-6" >
-                {   uiState !== 'signedIn' &&
-                    (
-                        <>
+        <div className="relative w-full flex items-center justify-center">
+        
+            {   uiState !== 'signedIn' && 
+                (
+                    <div className="container w-3/4 flex items-center justify-center rounded-md mt-6 shadow-lg" >
+                        <div className="w-1/2 h-full flex items-center justify-center border-r-2 border-slate-200">
                             {
                                 uiState === 'signUp' && (
                                     <SignUp onChange={onChange} setUiState={setUiState} signUp={signUp} />
@@ -142,12 +145,18 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
                                     <ForgotPasswordSubmit onChange={onChange} forgotPasswordSubmit={forgotPasswordSubmit} />
                                 )
                             } 
-                        </>
-                    )
-                }
-            </div>
+                        </div>
+                        
+                        <div className="w-1/2 flex justify-start sign-img rounded"><img className="talkers" src={Talkers} alt="" /></div>  
+                    </div>
+                      
+                )
+                  
+            }
+   
         </div>
     )
+  
 }
 
 export default UIOptions

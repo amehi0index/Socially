@@ -3,37 +3,37 @@ import Input from '../../Input'
 
 const Signin = ({ onChange, setUiState, signIn }) => {
   return (
-    <div className="sm:w-540 mt-12 bg-white py-9 px-12 rounded shadow-lg self-start">
-      <p className="text-3xl font-black">Sign In</p>
+    <div className="sm:w-540 mt-12 bg-white py-9 px-12 rounded  flex flex-col">
+      <p className="text-3xl font-black">Welcome Back!</p>
 
       <div className="mt-6">
-        <label className="text-sm">Email</label>
-        <Input onChange={onChange} name="email" />
+        <Input onChange={onChange} name="email"  placeholder="Email"/>
       </div>
 
-      <div className="mt-7">
-        <label className="text-sm flex justify-between">
-          <span>Password</span>
-          <span
+      <div className="mt-7 flex flex-col">
+        <Input type="password" name="password" onChange={onChange} placeholder="Password" />
+        <span
             onClick={() => setUiState('forgotPassword')}
             className="ml-8 sm:ml-48 text-teal-500 cursor-pointer"
           >Forgot your password?</span>
-        </label>
-        <Input type="password" name="password" onChange={onChange} />
       </div>
 
-      <button onClick={signIn} className="text-white w-full mt-6 bg-teal-600 hover:bg-teal-700 p-3 rounded">
-        Continue
+      <button onClick={signIn} className="text-white w-full mt-6 bg-slate-800 hover:bg-slate-700 duration-300 p-3 rounded ease-in-out">
+        Login
       </button>
+
+      <div className="flex items-center  py-1 mt-6">
+        <div class="w-[400px]  bg-gray-200 h-[1px]"></div>
+      </div>
 
       <SocialSignIn />
 
-      <p className="mt-6 text-base font-light">
+      <p className="mt-6 pt-6 text-base font-light">
         Don't have an account?
         <span
           onClick={() => setUiState('signUp')}
           role="button"
-          className="cursor-pointer text-teal-600"> Sign Up
+          className="cursor-pointer text-teal-600 font-semibold"> Sign up here
         </span>
       </p>
     </div>

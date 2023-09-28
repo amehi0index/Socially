@@ -10,14 +10,13 @@ function Navbar({ uiState, setUiState, user, setUser }) {
   }
 
   return (
-    <nav className="relative w-full flex  items-center justify-between bg-gradient-to-r from-teal-600 p-6">
+    <nav className="relative w-full flex  items-center justify-between bg-gradient-to-r from-teal-700 to-teal-500 p-6">
       <div className="container-fluid w-full flex  items-center justify-between">
         <div className="container-fluid w-full flex justify-between">
           <div class="flex items-center flex-shrink-0 text-white mr-6">
-          <span class="font-semibold text-xl">NotReddit</span>
-            {/* <Link to="/"> 
+            {uiState === ('signedIn') ?( <Link to="/allposts"> 
               <span class="font-semibold text-xl">NotReddit</span>
-            </Link> */}
+            </Link>) : (<Link><span class="font-semibold text-xl">NotReddit</span></Link>)}
           </div> 
             {
               uiState !== ('signedIn') && (

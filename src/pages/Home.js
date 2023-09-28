@@ -10,8 +10,7 @@ function Home({ uiState, setUiState, checkUser }) {
  
   return (
     // <AllPosts />
-    <>
-    </>
+    <></>
   )
 
 }

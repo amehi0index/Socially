@@ -3,19 +3,18 @@ import { Auth } from 'aws-amplify'
 
 function SocialSignIn() {
   return (
-    <div className="flex flex-col justify-evenly">
-      <button className="mt-4 focus:outline-none" onClick={() => Auth.federatedSignIn({ provider: 'Google' })}>
-        <div className="flex border border-gray-300 p-2 rounded items-center ">
-          <FaGoogle size="30" className="text-red-600"/>
-          <p className="ml-3">Sign in with Google</p>
-        </div>
-      </button>
-      {/* <button className="mt-4 focus:outline-none" onClick={() => Auth.federatedSignIn({ provider: 'Facebook' })}>
-        <div className="flex border border-gray-300 p-2 rounded items-center">
-          <FaFacebook size="30" className="text-blue-600"/>
-          <p className="ml-3">Sign in with Facebook</p>
-        </div>
-      </button> */}
+    <div className="flex">
+      <div className="flex justify-between w-2/5">
+        <button className="mt-4 focus:outline-none" onClick={() => Auth.federatedSignIn({ provider: 'Google' })}>
+            <FaGoogle size="40" className="bg-slate-800 hover:bg-slate-700 duration-300 rounded-full text-white p-3"/>
+        </button>
+        <button className="mt-4 focus:outline-none bg-slate-800 hover:bg-slate-700 duration-300 rounded-full text-white p-3" onClick={() => Auth.federatedSignIn({ provider: 'Facebook' })}>
+            <FaFacebook size=""/>
+        </button>
+        <button className="mt-4 focus:outline-none bg-slate-800 rounded-full hover:bg-slate-700 ease-in-out duration-300 text-white p-3" onClick={() => Auth.federatedSignIn({ provider: 'Facebook' })}>
+            <FaFacebook size=""/>
+        </button>
+      </div>
     </div>
   )
 }

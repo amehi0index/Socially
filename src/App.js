@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Auth, Hub, API } from 'aws-amplify'
 import AppRoutes from './routes/AppRoutes'
+import { Divider } from '@aws-amplify/ui-react'
 
 
 const initialState = { handle: '', email: '', avatar: ''}
