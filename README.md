@@ -1,6 +1,6 @@
 # NotReddit
 
-![Project Image](post.png)
+![Project Image](socially.png)
 
 > Full-stack Serverless Post-Comment Application built with AWS Amplify
 
