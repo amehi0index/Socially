@@ -28,18 +28,18 @@ function Navbar({ uiState, setUiState, user, setUser }) {
          
             {
               uiState === ('signedIn') && ( 
-                <div className="flex w-full pl-10 items-center text-white justify-between font-Roboto font-semibold ">
+                <div className="flex w-full pl-10 items-center text-xs md:text-sm text-white justify-between font-Roboto font-semibold ">
                   <div>
                     <Link to="/userposts">
-                      <span className="mr-6 cursor-pointer uppercase text-sm hover:text-slate-100 transition duration-200">My Posts</span>
+                      <span className="text-xs md:text-sm mr-3 cursor-pointer uppercase  hover:text-slate-100 transition duration-200">My Posts</span>
                     </Link>
                       
                     <Link to="/createpost">
-                      <span className="mr-6 cursor-pointer uppercase text-sm hover:text-slate-100">Create Post</span>
+                      <span className="text-xs md:text-sm mr-3 cursor-pointer uppercase hover:text-slate-100">Create Post</span>
                       </Link>
                       
                     <Link to="/edituserprofile">
-                      <span className="mr-6 cursor-pointer uppercase text-sm hover:text-slate-100">Profile</span>
+                      <span className="text-xs md:text-sm mr-3 cursor-pointer uppercase  hover:text-slate-100">Profile</span>
                     </Link>
                   </div>
                

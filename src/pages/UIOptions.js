@@ -117,8 +117,8 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
         
             {   uiState !== 'signedIn' && 
                 (
-                    <div className="container w-3/4 flex items-center justify-center rounded-md mt-6 shadow-lg" >
-                        <div className="w-1/2 h-full flex items-center justify-center border-r-2 border-slate-100">
+                    <div className="container full md:w-3/4 flex items-center justify-center rounded-md mt-6 shadow-lg bg-white" >
+                        {/* <div className="w-1/2 h-full flex items-center justify-center border-r-2 border-slate-100 bg-green-200"> */}
                             {
                                 uiState === 'signUp' && (
                                     <SignUp onChange={onChange} setUiState={setUiState} signUp={signUp} />
@@ -145,9 +145,11 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
                                     <ForgotPasswordSubmit onChange={onChange} forgotPasswordSubmit={forgotPasswordSubmit} />
                                 )
                             } 
-                        </div>
+                        {/* </div> */}
                         
-                        <div className="w-1/2 flex justify-start sign-img rounded"><img className="talkers" src={Talkers} alt="" /></div>  
+                        {/* <div className="w-1/2 flex justify-start sign-img rounded bg-orange-300 p-2"> */}
+                            <img className="talkers hidden lg:block object-scale-down" src={Talkers} alt="Avatars Communicating via Cellphone" />
+                            {/* </div>   */}
                     </div>
                       
                 )

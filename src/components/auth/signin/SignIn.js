@@ -3,7 +3,7 @@ import Input from '../../Input'
 
 const Signin = ({ onChange, setUiState, signIn }) => {
   return (
-    <div className="sm:w-540 mt-12 bg-white py-9 px-12 rounded  flex flex-col">
+    <div className="sm:w-540 py-9 px-12 rounded  flex flex-col">
       <p className="text-3xl font-black">Welcome Back!</p>
 
       <div className="mt-6">
