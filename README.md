@@ -33,7 +33,7 @@ Utilizes the AWS Amplify Framework to leverage AWS services such as Amazon Cogni
 #### Fork and Clone Repository
 
 ```
-git clone https://github.com/amehi0index/React-Amplify-Auth.git
+git clone https://github.com/amehi0index/Socially.git
 ```
 
 #### Install dependencies
