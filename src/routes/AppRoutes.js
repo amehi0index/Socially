@@ -32,7 +32,7 @@ const AppRoutes = ({ user, setUser, checkUser, uiState, setUiState }) => {
         user={user}
       />
 
-      <div className="container-fluid w-full bg-green-300 flex p-7">      
+      <div className="container-fluid w-full flex p-7">      
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='signin' element={<SignIn/>}/>

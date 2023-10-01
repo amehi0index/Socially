@@ -72,7 +72,7 @@ function CreatePost() {
   }
     
   return (
-    <div className="container bg-orange-200 w-full flex">
+    <div className="container w-full flex">
       <div class="bg-slate-700 opacity-90 container-fluid w-full lg:w-2/3 flex flex-col  mt-10 py-4 px-8 rounded">
         <p className="text-xl text-white font-bold">Create A Post</p>
         <div className="container-fluid flex bg-purple-700 w-full h-full justify-center px-4 my-5 rounded-sm"> 
