@@ -18,9 +18,9 @@ const Greeting = ({ user, setUser, setUiState }) => {
       <p className="hidden md:block  text-white mr-4">Welcome,
         <Link to="/edituserprofile" className="cursor-pointerhover:bg-slate-700 mx-1">{user}</Link>
       </p>
-      <span className="md:hidden bg-slate-800 hover:bg-slate-700 lg:px-4 px-2 py-2 mr-2 rounded"> 
+      {/* <span className="md:hidden bg-slate-800 hover:bg-slate-700 lg:px-4 px-2 py-2 mr-2 rounded"> 
         <FaUserAlt size="16" className="text-white "/>
-      </span> 
+      </span>  */}
 
       <button 
         className= "text-white text-sm md:text-md bg-slate-800 lg:px-4 px-2 py-2 rounded hover:bg-slate-700 transition ease-in-out"

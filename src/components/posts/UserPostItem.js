@@ -100,7 +100,7 @@ export default function Post() {
  
     return ( 
         <div className="container-fluid w-2/3 flex ml-40">
-            <div class="bg-slate-700 opacity-90 container-fluid w-full flex flex-col  mt-10 py-4 px-8 rounded">
+            <div class="bg-slate-700 opacity-90 container-fluid w-full lg:w-2/3 flex flex-col  mt-10 py-4 px-8 rounded">
                 <div className="container-fluid  bg-purple-700 w-full h-full px-4 pb-7 my-5 rounded-sm flex flex-col"> 
                     {/* <div class="bg-slate-700 opacity-90 flex flex-col mx-6 mt-8 py-4 px-8 rounded"> */}
                     <div className="flex flex-col mx-6 mt-8 py-4 px-8 rounded">

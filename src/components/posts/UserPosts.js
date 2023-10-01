@@ -52,10 +52,10 @@ const UserPosts = ({ user }) => {
   }
  
   return (
-    <div className="container-fluid w-2/3 flex ml-40">
-      <div class="bg-slate-700 opacity-90 container-fluid w-full flex flex-col  mt-10 py-4 px-8 rounded">
-        <p className="text-xl text-white font-bold">My Posts</p>
-        <div className="container-fluid flex bg-purple-800 w-full h-full justify-center my-5 rounded-sm"> 
+    <div className="container bg-orange-200 w-full flex">
+    <div class="bg-slate-700 opacity-90 container-fluid w-full lg:w-2/3 flex flex-col  mt-10 py-4 px-8 rounded">
+      <p className="text-xl text-white font-bold">My Posts</p>
+      <div className="container-fluid flex bg-purple-700 w-full h-full justify-center px-4 my-5 rounded-sm">  
           <div className="flex flex-col justify-center w-full">
             {
               posts.map((post, index) => (

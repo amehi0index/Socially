@@ -153,14 +153,11 @@ function EditUserProfile() {
   }
     
   return (
-    <div className="container-fluid mx-auto w-1/3 flex ml-40">
-      <div class="bg-slate-700 opacity-90 container-fluid  flex flex-col mt-10 py-4 px-8 rounded w-full max-w-md mx-auto">
-
+    <div className="container bg-orange-200 w-full flex">
+      <div class="bg-slate-700 opacity-90 container-fluid w-full lg:w-2/3 flex flex-col  mt-10 py-4 px-8 rounded">
         <p className="text-xl text-white font-bold">Profile</p>
         <div className="container-fluid flex bg-purple-700 w-full h-full justify-center px-4 my-5 rounded-sm"> 
           <div className="flex flex-col justify-center items-center w-full">
-            
-
             {profile && (
               <>
                 <input
@@ -193,7 +190,7 @@ function EditUserProfile() {
                 </select>
 
             <div className="h-40 w-40 bg-gradient-to-r from-purple-600 to-purple-400 opacity-60 my-4 p-4 rounded flex self-center items-center justify-center relative">  
-              <img src={image ? URL.createObjectURL(image) : avatarImage} className="my-4 h-24 w-24" />
+              <img src={image ? URL.createObjectURL(image) : avatarImage} className="my-4 h-24 w-24"alt="User avatar"/>
                
               <button className="absolute top-2 right-2 p-2 rounded-full bg-gray-600 hover:bg-gray-500 ease-in-out duration-300" onClick={uploadImage}>
                 <FaUserPlus />
