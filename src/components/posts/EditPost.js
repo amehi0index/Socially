@@ -100,7 +100,7 @@ function EditPost() {
               value={post.title}
               className="border-b pb-2 text-lg my-4 p-2 focus:outline-none w-full font-light text-gray-500 placeholder-gray-500 y-2 rounded"
             /> 
-            <div className="w-full h-72 bg-slate-800 my-3">
+            <div className="w-full h-72  my-3">
               {
                 postImage && <img src={localImage ? localImage : postImage} className="p-1 w-full h-full object-cover" alt="Post Image" />
                 // image && <img src={URL.createObjectURL(image)} className="p-1 w-full h-full object-cover" alt="Post Image"/>
@@ -121,16 +121,16 @@ function EditPost() {
               className="border-b p-2 text-lg my-4 focus:outline-none w-full  h-64 font-light text-gray-500 placeholder-gray-500 y-2 rounded"
             />
 
-            <div className="flex space-x-2 pb-3">
+            <div className="flex flex-col md:flex-row pb-3">
 
               <button
-                 className="bg-slate-800 text-white font-semibold px-4 py-2 rounded-sm hover:bg-slate-700 transition ease-in-out"
-                  onClick={uploadImage}
+                className="bg-slate-800 text-white font-semibold px-4 py-2 m-1 rounded-sm hover:bg-slate-700 transition ease-in-out"
+                onClick={uploadImage}
               >Upload Image
               </button>
 
               <button
-                className="bg-slate-800 text-white font-semibold px-4 py-2 rounded-sm hover:bg-slate-700 transition ease-in-out"
+                className="bg-slate-800 text-white font-semibold px-4 py-2 m-1 rounded-sm hover:bg-slate-700 transition ease-in-out"
                 onClick={updateCurrentPost}>
                 Update Post
               </button>
