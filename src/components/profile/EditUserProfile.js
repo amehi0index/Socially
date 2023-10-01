@@ -153,11 +153,13 @@ function EditUserProfile() {
   }
     
   return (
-    <div className="container-fluid w-1/3 flex ml-40">
-      <div class="bg-slate-700 opacity-90 container-fluid w-full flex flex-col mt-10 py-4 px-8 rounded">
+    <div className="container-fluid mx-auto w-1/3 flex ml-40">
+      <div class="bg-slate-700 opacity-90 container-fluid  flex flex-col mt-10 py-4 px-8 rounded w-full max-w-md mx-auto">
+
         <p className="text-xl text-white font-bold">Profile</p>
         <div className="container-fluid flex bg-purple-700 w-full h-full justify-center px-4 my-5 rounded-sm"> 
-          <div className="flex flex-col justify-center w-full">
+          <div className="flex flex-col justify-center items-center w-full">
+            
 
             {profile && (
               <>

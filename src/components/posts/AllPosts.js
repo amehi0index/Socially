@@ -120,7 +120,7 @@ const AllPosts = () => {
                     
                     <div className="w-14 h-14 rounded-full bg-purple-500 opacity-80 flex items-center justify-center">
                       {
-                        (post.userAvatar && <img src={post.userAvatar} className="object-cover w-12 h-12 rounded-full" />)
+                        (post.userAvatar && <img src={post.userAvatar} className="object-cover w-12 h-12 rounded-full" alt="User avatar"/>)
                       }
                     </div>
                       
@@ -146,7 +146,7 @@ const AllPosts = () => {
 
                       <div className="hidden md:flex h-32 w-1/5 bg-purple-800">
                         {
-                          post.coverImage && <img src={post.coverImage} className="object-cover mx-auto h-full rounded p-2"/>
+                          post.coverImage && <img src={post.coverImage} className="object-cover mx-auto h-full rounded p-2" alt="User avatar"/>
                         }
                       </div>
                     </div>
