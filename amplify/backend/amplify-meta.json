@@ -42,7 +42,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-socially-dev-123626-deployment/amplify-cfn-templates/auth/socially3fe368ff-cloudformation-template.json",
         "logicalId": "authsocially3fe368ff"
       },
-      "lastPushTimeStamp": "2023-10-02T02:42:36.012Z",
+      "lastPushTimeStamp": "2023-10-02T03:35:07.339Z",
       "output": {
         "UserPoolId": "us-west-2_3hTwSeufo",
         "AppClientIDWeb": "27anvq36hd6sk776eahv93r05i",
@@ -97,7 +97,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-socially-dev-123626-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apisocially"
       },
-      "lastPushTimeStamp": "2023-10-02T02:42:36.022Z",
+      "lastPushTimeStamp": "2023-10-02T03:35:07.350Z",
       "lastPushDirHash": "2eFv7m7o3YF5m/7nPUFP4EvPSGA="
     }
   },
@@ -106,7 +106,7 @@
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "lastPushTimeStamp": "2023-10-02T02:42:41.116Z",
+      "lastPushTimeStamp": "2023-10-02T03:35:12.226Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-socially-dev-123626-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storagesociallyImages"
