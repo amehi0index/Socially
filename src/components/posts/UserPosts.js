@@ -31,9 +31,7 @@ const UserPosts = ({ user }) => {
       query: listPosts
     })
    
-    // console.log(postData)
     const userPostList = postData.data.listPosts.items.filter(item => item.owner === username)
-      // console.log(userPostList)
     setPosts(userPostList)
   } 
 
@@ -64,10 +62,6 @@ const UserPosts = ({ user }) => {
                     <h2 className="text-xl font-semibold w-5/6 truncate">{post.title}</h2>
           
                     <div className="flex space-x-2 justify-end">
-                      {/* <Link to={`/editpost/${post.id}`} state={post} className="bg-slate-800 text-white text-sm py-1 px-2  rounded-sm cursor-pointer">
-                        <FaEdit className="text-white" />
-                      </Link> */}
-
                       <Link to={`/userpostitem/${post.id}`} state={post} className="bg-slate-800 text-white text-sm py-1 px-2 rounded-sm cursor-pointer">
                         <FaEye  className="text-white" />
                       </Link> 

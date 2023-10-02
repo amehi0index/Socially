@@ -164,7 +164,6 @@ function EditUserProfile() {
                   name="handle"
                   readOnly
                   placeholder={profile.pronouns !== "" ? `${profile.handle} (${profile.pronouns})` : `${profile.handle}`}
-                  // placeholder={`${profile.handle} (${profile.pronouns})` ?? `${profile.handle}`}
                   className="border-b text-sm mt-4 p-2 focus:outline-none w-full text-gray-500 rounded"
                 /> 
                           
@@ -206,25 +205,12 @@ function EditUserProfile() {
                 />
 
                 <div className="flex justify-between pb-3 mt-4">
-                  {/* <button
-                    className="bg-slate-800 text-white font-semibold px-4 py-2 rounded-sm hover:bg-slate-700 transition ease-in-out"
-                    onClick={uploadImage}
-                  >Upload Image
-                  </button> */}
-
                   <button
                     type="button"
                     className="bg-slate-800 text-white font-semibold px-4 py-2 rounded-sm hover:bg-slate-700 transition ease-in-out"
                     onClick={updateUserProfile}
                   >Update Profile
                   </button>
-
-                  {/* <button
-                    type="button"
-                    className="bg-slate-800 text-white font-semibold px-4 py-2 rounded-sm hover:bg-slate-700 transition ease-in-out"
-                    onClick={deleteUserProfile}
-                  >Delete Profile
-                  </button> */}
                 </div>
               </>
             )}           
