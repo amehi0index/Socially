@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { API, Storage } from 'aws-amplify'
 import { useNavigate, useParams } from 'react-router-dom'
-// import SimpleMDE from "react-simplemde-editor"
-// import "easymde/dist/easymde.min.css"
 import { updatePost } from '../../graphql/mutations'
 import {getPost} from '../../graphql/queries'
 import { v4 as uuid } from 'uuid'
@@ -36,8 +34,6 @@ function EditPost() {
       console.log('pfile:', post)
       const imageKey = await Storage.get(postImage)
       setPostImage(imageKey)
-       
-      // post.coverImage = imageKey
       console.log(imageKey)
     } else {
       console.log('no key')
@@ -107,14 +103,12 @@ function EditPost() {
               }
             </div>
 
-             <input
-                  type="file"
-                  ref={hiddenFileInput}
-                  className="absolute w-0 h-0"
-                  onChange={handleChange}
-             />
-
-            {/* <SimpleMDE value={post.content} onChange={value => setPost({ ...post, content: value })} /> */}
+            <input
+              type="file"
+              ref={hiddenFileInput}
+              className="absolute w-0 h-0"
+              onChange={handleChange}
+            />
             <textarea
               value={post.content}
               onChange={e => setPost({ ...post, content: e.target.value })}
@@ -122,7 +116,6 @@ function EditPost() {
             />
 
             <div className="flex flex-col md:flex-row pb-3">
-
               <button
                 className="bg-slate-800 text-white font-semibold px-4 py-2 m-1 rounded-sm hover:bg-slate-700 transition ease-in-out"
                 onClick={uploadImage}
