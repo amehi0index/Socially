@@ -4,7 +4,7 @@ import { API, Storage, graphqlOperation } from 'aws-amplify'
 import { listPosts } from '../../graphql/queries'
 import { getUser } from '../../graphql/queries'
 import { listComments, listPostLikes } from '../../graphql/queries'
-import * as subscriptions from '../../graphql/subscriptions';
+import * as subscriptions from '../../graphql/subscriptions'
 import { FaComment, FaHeart } from 'react-icons/fa'
 import defaultAvatar from '../../img/profile-user.png'
 
