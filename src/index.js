@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-
 import App from './App';
-import Amplify, { Auth } from 'aws-amplify'
-import config from './aws-exports'
 
+import { Amplify } from 'aws-amplify';
+import config from './aws-exports';
+Amplify.configure(config);
 
-//Referenced from https://github.com/aws-amplify/amplify-cli/issues/2792
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
@@ -30,8 +29,8 @@ const oauth = {
 
 // if not, update the URLs
 if (!isLocalhost) {
-  oauth.redirectSignIn = 'https://main.d2mpmmgvvwzzqh.amplifyapp.com/';
-  oauth.redirectSignOut = 'https://main.d2mpmmgvvwzzqh.amplifyapp.com/';
+  oauth.redirectSignIn = 'https://main.d2mpmmgvvwzzqh.amplifyapp.com//';
+  oauth.redirectSignOut = 'https://main.d2p4v1a9bpr5tk.amplifyapp.com/';
 }
 
 // copy the constant config (aws-exports.js) because config is read only.
@@ -49,3 +48,8 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
