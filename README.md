@@ -2,23 +2,36 @@
 
 ![Project Image](socially.png)
 
-> Full-stack Serverless Post-Comment Application built with AWS Amplify
+> A full-stack serverless post-comment application built with AWS Amplify and React.
 
 ---
 
 ### Table of Contents
 
 - [Description](#description)
-- [How To Use](#how-to-use)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Setup and Usage](#setup)
 - [License](#license)
 
 ---
 
 ## Description
 
-Full-stack serverless Post-Comment application built with the AWS Amplify Framework that allows guest users to read existing posts and comments, and registered users to read, add, update, and delete posts and comments.
+"NotReddit" is a serverless post-comment application that allows:
 
-Utilizes the AWS Amplify Framework to leverage AWS services such as Amazon Cognito, AWS AppSync, DynamoDB, S3, and Amplify JavaScript Library features such as Authentication, GraphQL API and Storage.
+- Guest users to read existing posts and comments.
+- Registered users to read, add, update, and delete posts and comments.
+
+The application leverages the AWS Amplify Framework to utilize AWS services such as Amazon Cognito, AWS AppSync, DynamoDB, S3, and more.
+
+## Features
+
+- Authentication: Secure user registration and sign-in.
+- Posts: Create, read, update, and delete posts.
+- Comments: Add comments to posts and manage them.
+- Likes: Users can like posts.
+- Profile: Edit user profile details.
 
 ### Technologies
 
@@ -28,7 +41,7 @@ Utilizes the AWS Amplify Framework to leverage AWS services such as Amazon Cogni
 
 ---
 
-## How To Use
+## Setup and Usage
 
 #### Fork and Clone Repository
 
@@ -36,7 +49,7 @@ Utilizes the AWS Amplify Framework to leverage AWS services such as Amazon Cogni
 git clone https://github.com/amehi0index/Socially.git
 ```
 
-#### Install dependencies
+#### Install Dependencies
 
 ```
 npm install
@@ -50,19 +63,19 @@ npm install -g @aws-amplify/cli
 amplify configure
 ```
 
-#### Initialize a new Amplify project following these [guidelines](https://docs.amplify.aws/cli/start/workflows/).
+#### Initialize Amplify Project:Following these [guidelines](https://docs.amplify.aws/cli/start/workflows/).
 
 ```
 https://docs.amplify.aws/cli/start/workflows/
 ```
 
-Set up your Auth provider(s) for Social sign-in (OAuth) using these [guidelines](https://docs.amplify.aws/lib/auth/social/q/platform/js/).
+Set Up Social Sign-in (OAuth): Use these [guidelines](https://docs.amplify.aws/lib/auth/social/q/platform/js/).
 
 ```
 https://docs.amplify.aws/lib/auth/social/q/platform/js/
 ```
 
-#### To run the applicaton
+#### Run the Application:
 
 ```
 npm start
@@ -74,4 +87,4 @@ npm start
 
 This project is licensed under the [MIT License](#LICENSE.txt)
 
-[Back To Top](#react-amplify-auth)
+[Back To Top](#NotReddit)

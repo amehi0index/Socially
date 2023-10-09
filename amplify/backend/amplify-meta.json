@@ -20,6 +20,7 @@
       "customAuth": false,
       "frontendAuthConfig": {
         "socialProviders": [
+          "FACEBOOK",
           "GOOGLE"
         ],
         "usernameAttributes": [],
@@ -42,7 +43,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-socially-dev-123626-deployment/amplify-cfn-templates/auth/socially3fe368ff-cloudformation-template.json",
         "logicalId": "authsocially3fe368ff"
       },
-      "lastPushTimeStamp": "2023-10-02T03:35:07.339Z",
+      "lastPushTimeStamp": "2023-10-06T02:48:01.640Z",
       "output": {
         "UserPoolId": "us-west-2_3hTwSeufo",
         "AppClientIDWeb": "27anvq36hd6sk776eahv93r05i",
@@ -54,7 +55,7 @@
         "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
         "UserPoolName": "socially3fe368ff_userpool_3fe368ff"
       },
-      "lastPushDirHash": "TblNCaB8fujJA7S3+QBNUPZygvY="
+      "lastPushDirHash": "XzNp2hGny/qF0tm4hdqls/L27K0="
     }
   },
   "api": {
@@ -97,7 +98,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-socially-dev-123626-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apisocially"
       },
-      "lastPushTimeStamp": "2023-10-02T03:35:07.350Z",
+      "lastPushTimeStamp": "2023-10-06T02:47:59.893Z",
       "lastPushDirHash": "2eFv7m7o3YF5m/7nPUFP4EvPSGA="
     }
   },
@@ -106,7 +107,7 @@
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "lastPushTimeStamp": "2023-10-02T03:35:12.226Z",
+      "lastPushTimeStamp": "2023-10-06T02:47:59.902Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-socially-dev-123626-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storagesociallyImages"
