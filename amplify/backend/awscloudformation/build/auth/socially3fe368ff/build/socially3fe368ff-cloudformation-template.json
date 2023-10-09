@@ -231,6 +231,7 @@
           "Ref": "userpoolClientRefreshTokenValidity"
         },
         "SupportedIdentityProviders": [
+          "Facebook",
           "Google",
           "COGNITO"
         ],
@@ -274,6 +275,7 @@
           "Ref": "userpoolClientRefreshTokenValidity"
         },
         "SupportedIdentityProviders": [
+          "Facebook",
           "Google",
           "COGNITO"
         ],

@@ -185,8 +185,8 @@
           "useDefault": "defaultSocial",
           "hostedUI": true,
           "hostedUIDomainName": "socially3fe368ff-3fe368ff",
-          "authProvidersUserPool": "Google",
-          "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+          "authProvidersUserPool": "Facebook,Google",
+          "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
           "userPoolGroupList": "",
           "serviceName": "Cognito",
           "usernameCaseSensitive": false,
@@ -206,7 +206,7 @@
           "breakCircularDependency": true,
           "dependsOn": "",
           "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
-          "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\"}]",
+          "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"1316505285899937\",\"client_secret\":\"29af809f967854885d99a2b85e5329d6\"},{\"ProviderName\":\"Google\",\"client_id\":\"136322601233-akfbfmv9led14hdj144eqo85fuglh82l.apps.googleusercontent.com\",\"client_secret\":\"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\"}]",
           "env": "dev"
         }
       }
