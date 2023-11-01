@@ -1,4 +1,4 @@
-# NotReddit
+# Socially (NotReddit)
 
 ![Project Image](socially.png)
 
@@ -18,7 +18,7 @@
 
 ## Description
 
-"NotReddit" is a serverless post-comment application that allows:
+"Socially (NotReddit)" is a serverless post-comment application that allows:
 
 - Guest users to read existing posts and comments.
 - Registered users to read, add, update, and delete posts and comments.
@@ -33,7 +33,7 @@ The application leverages the AWS Amplify Framework to utilize AWS services such
 - Likes: Users can like posts.
 - Profile: Edit user profile details.
 
-### Technologies
+## Technologies
 
 - React : v18.1.0
 - AWS-Amplify: v4.3.24
