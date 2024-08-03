@@ -4,8 +4,10 @@ import './index.css';
 import App from './App';
 
 import { Amplify } from 'aws-amplify';
-import config from './aws-exports';
-Amplify.configure(config);
+// import config from './aws-exports';
+// Amplify.configure(config);
+
+import awsConfig from './aws-exports';
 
 
 const isLocalhost = Boolean(
@@ -19,28 +21,26 @@ const isLocalhost = Boolean(
 );
 
 // by default, say it's localhost
-const oauth = {
-  domain: 'socially3fe368ff-3fe368ff-dev.auth.us-west-2.amazoncognito.com',
-  scope: ['phone', 'email', 'profile', 'openid', 'aws.cognito.signin.user.admin'],
-  redirectSignIn: 'http://localhost:3000/',
-  redirectSignOut: 'http://localhost:3000/',
-  responseType: 'code' // or 'token', note that REFRESH token will only be generated when the responseType is code
+const [localRedirectSignIn, productionRedirectSignIn] =
+  awsConfig.oauth.redirectSignIn.split(',');
+
+const [localRedirectSignOut, productionRedirectSignOut] =
+  awsConfig.oauth.redirectSignOut.split(',');
+
+const updatedAwsConfig = {
+  ...awsConfig,
+  oauth: {
+    ...awsConfig.oauth,
+    redirectSignIn: isLocalhost
+      ? localRedirectSignIn
+      : productionRedirectSignIn,
+    redirectSignOut: isLocalhost
+      ? localRedirectSignOut
+      : productionRedirectSignOut
+  }
 };
 
-// if not, update the URLs
-if (!isLocalhost) {
-  oauth.redirectSignIn = 'https://main.d2mpmmgvvwzzqh.amplifyapp.com//';
-  oauth.redirectSignOut = 'https://main.d2p4v1a9bpr5tk.amplifyapp.com/';
-}
-
-// copy the constant config (aws-exports.js) because config is read only.
-var configUpdate = config;
-// update the configUpdate constant with the good URLs
-configUpdate.oauth = oauth;
-// Configure Amplify with configUpdate
-// Amplify.Logger.LOG_LEVEL = "DEBUG"
-Amplify.configure(configUpdate);
-
+Amplify.configure(updatedAwsConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

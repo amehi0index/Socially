@@ -205,8 +205,8 @@
           },
           "breakCircularDependency": true,
           "dependsOn": "",
-          "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
-          "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"1316505285899937\",\"client_secret\":\"29af809f967854885d99a2b85e5329d6\"},{\"ProviderName\":\"Google\",\"client_id\":\"136322601233-akfbfmv9led14hdj144eqo85fuglh82l.apps.googleusercontent.com\",\"client_secret\":\"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\"}]",
+          "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"https://main.d2mpmmgvvwzzqh.amplifyapp.com/\"],\"LogoutURLs\":[\"http://localhost:3000/\",\"https://main.d2mpmmgvvwzzqh.amplifyapp.com/\"]}",
+          "hostedUIProviderCreds": "[]",
           "env": "dev"
         }
       }

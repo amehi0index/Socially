@@ -221,11 +221,13 @@
           "aws.cognito.signin.user.admin"
         ],
         "CallbackURLs": [
-          "http://localhost:3000/"
+          "http://localhost:3000/",
+          "https://main.d2mpmmgvvwzzqh.amplifyapp.com/"
         ],
         "ClientName": "social3fe368ff_app_clientWeb",
         "LogoutURLs": [
-          "http://localhost:3000/"
+          "http://localhost:3000/",
+          "https://main.d2mpmmgvvwzzqh.amplifyapp.com/"
         ],
         "RefreshTokenValidity": {
           "Ref": "userpoolClientRefreshTokenValidity"
@@ -262,14 +264,16 @@
           "aws.cognito.signin.user.admin"
         ],
         "CallbackURLs": [
-          "http://localhost:3000/"
+          "http://localhost:3000/",
+          "https://main.d2mpmmgvvwzzqh.amplifyapp.com/"
         ],
         "ClientName": "social3fe368ff_app_client",
         "GenerateSecret": {
           "Ref": "userpoolClientGenerateSecret"
         },
         "LogoutURLs": [
-          "http://localhost:3000/"
+          "http://localhost:3000/",
+          "https://main.d2mpmmgvvwzzqh.amplifyapp.com/"
         ],
         "RefreshTokenValidity": {
           "Ref": "userpoolClientRefreshTokenValidity"

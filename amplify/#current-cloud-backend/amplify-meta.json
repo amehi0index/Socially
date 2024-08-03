@@ -43,7 +43,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-socially-dev-123626-deployment/amplify-cfn-templates/auth/socially3fe368ff-cloudformation-template.json",
         "logicalId": "authsocially3fe368ff"
       },
-      "lastPushTimeStamp": "2023-10-06T02:48:01.640Z",
+      "lastPushTimeStamp": "2024-08-03T06:03:30.457Z",
       "output": {
         "UserPoolId": "us-west-2_3hTwSeufo",
         "AppClientIDWeb": "27anvq36hd6sk776eahv93r05i",
@@ -52,10 +52,10 @@
         "IdentityPoolId": "us-west-2:38011c28-d6a2-4972-a7fd-1739e6afd96a",
         "UserPoolArn": "arn:aws:cognito-idp:us-west-2:033784507506:userpool/us-west-2_3hTwSeufo",
         "IdentityPoolName": "socially3fe368ff_identitypool_3fe368ff__dev",
-        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
+        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"https://main.d2mpmmgvvwzzqh.amplifyapp.com/\"],\"LogoutURLs\":[\"http://localhost:3000/\",\"https://main.d2mpmmgvvwzzqh.amplifyapp.com/\"]}",
         "UserPoolName": "socially3fe368ff_userpool_3fe368ff"
       },
-      "lastPushDirHash": "XzNp2hGny/qF0tm4hdqls/L27K0="
+      "lastPushDirHash": "0DNDcbDAlZAukvREq+G0W34IhTA="
     }
   },
   "api": {
@@ -98,7 +98,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-socially-dev-123626-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apisocially"
       },
-      "lastPushTimeStamp": "2023-10-06T02:47:59.893Z",
+      "lastPushTimeStamp": "2024-08-03T06:03:29.915Z",
       "lastPushDirHash": "2eFv7m7o3YF5m/7nPUFP4EvPSGA="
     }
   },
@@ -107,7 +107,7 @@
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "lastPushTimeStamp": "2023-10-06T02:47:59.902Z",
+      "lastPushTimeStamp": "2024-08-03T06:03:29.929Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-socially-dev-123626-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storagesociallyImages"

@@ -58,13 +58,12 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
 
     async function confirmSignUp() {
         try {
-            await await Auth.confirmSignUp(email, authCode)
+            await Auth.confirmSignUp(email, authCode)
             await Auth.signIn(email, password)
             setUiState('signedIn')
             checkUser()
             createUserProfile()
         } catch (err) { console.log({ err })}
-  
     }
 
     async function forgotPassword() {
