@@ -30,6 +30,7 @@ The application leverages the AWS Amplify Framework to utilize AWS services such
 ## Features
 
 - Authentication: Secure user registration and sign-in.
+
 - Posts: Create, read, update, and delete posts.
 - Comments: Add comments to posts and manage them.
 - Likes: Users can like posts.
