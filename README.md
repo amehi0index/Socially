@@ -23,7 +23,7 @@
 - Guest users to read existing posts and comments.
 - Registered users to read, add, update, and delete posts and comments.
 
-[![Watch the video](https://img.youtube.com/vi/5tl60MD589k/0.jpg)](https://youtu.be/5tl60MD589k)
+[![Watch the video](https://www.canva.com/design/DAGPvTUo2Ak/HOSoCtAaw12lKm7sH99STA/watch?utm_content=DAGPvTUo2Ak&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel)
 
 The application leverages the AWS Amplify Framework to utilize AWS services such as Amazon Cognito, AWS AppSync, DynamoDB, S3, and more.
 
